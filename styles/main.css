@@ -63,7 +63,7 @@
 /*Figure*/
 .mole{
     cursor: pointer;
-    background-image: url('/images/tartalo-original.png');
+    background-image: url('../images/tartalo-original.png');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -71,7 +71,7 @@
 
 .mole:hover{
     cursor: pointer;
-    background-image: url('/images/tartalo-whack.png');
+    background-image: url('../images/tartalo-whack.png');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
