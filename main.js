@@ -15,6 +15,7 @@ const timeEl = document.querySelectorAll('.js-whack-int');
 let result = 0;
 let hitPosition = 0;
 let currentTime = 10;
+let selectedTime = 10;
 let timerId = null;
 let timeInterval = 1000;
 
@@ -64,14 +65,14 @@ function adjustTime() {
     timeEl.forEach(input=> {
         input.addEventListener('click', () => {
             if(input.id === '10'){
-                currentTime = 10;
-                timeLeft.innerHTML = currentTime;
+                selectedTime = 10;
+                timeLeft.innerHTML = selectedTime;
             }else if(input.id === '20'){
-                currentTime = 20;
-                timeLeft.innerHTML = currentTime;
+                selectedTime = 20;
+                timeLeft.innerHTML = selectedTime;
             }else if(input.id === '30'){
-                currentTime = 30;
-                timeLeft.innerHTML = currentTime;
+                selectedTime = 30;
+                timeLeft.innerHTML = selectedTime;
             }
         })
     })
@@ -92,17 +93,22 @@ function countDown() {
         clearInterval(countDownTimerId);
         clearInterval(timerId);
         showAlert(result);
+        squareEl.forEach(className => {
+            className.classList.remove('mole');
+        })
     }
 }
 
 //Function to adjust speed by users choice
 adjustSpeed();
 
+adjustTime();
+
+
 startEl.addEventListener('click', () => {
-    adjustTime();
+    currentTime = selectedTime;
     result = 0;
     //Function to move mole randomly
-    console.log(timeInterval)
     timerId = setInterval(randomSquare, timeInterval);
     countDownTimerId = setInterval(countDown, 1000);
 })
@@ -124,14 +130,11 @@ function showAlert(value) {
     const body = document.querySelector('body');
     body.appendChild(alertBox);
     alertBtn.addEventListener('click', ()=>{
-        console.log('hide')
-        console.log(alertBox)
         alertBox.classList.add('js-remove');
         alertBox.classList.remove('js-alert-box');
         result = 0;
         scoreEl.innerHTML = result;
-        squareEl.forEach(className => {
-            className.classList.remove('mole');
-        })
+        currentTime = selectedTime;
+        timeLeft.innerHTML = selectedTime;
     })
 }
