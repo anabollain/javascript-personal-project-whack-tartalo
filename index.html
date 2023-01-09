@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Whack Tartalo</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles/main.css" />
+    <link rel="icon" href="./images/favicon.png" />
+</head>
+
+<body>
+    <div class="page">
+        <header class="page__header">
+            <a href="./index.html" class="page__header--link"><h1 class="page__header--title">Whack Tartalo</h1></a>
+        </header>
+        <main class="whack__main">
+                <section class="whack__main--game">
+                    <div class="js-whack-grid">
+                        <div class="square" id="1"></div>
+                        <div class="square" id="2"></div>
+                        <div class="square" id="3"></div>
+                        <div class="square" id="4"></div>
+                        <div class="square" id="5"></div>
+                        <div class="square" id="6"></div>
+                        <div class="square" id="7"></div>
+                        <div class="square" id="8"></div>
+                        <div class="square" id="9"></div>
+                    </div>
+                    <h2 class="whack__main--text">Score: <span id="js-whack-score">0</span></h2>
+                    <h2 class="whack__main--text">Seconds left: <span id="js-whack-time-left">20</span></h2>
+                    <form htmlFor="speed" class="whack__main--radio">
+                        <h2 class="radio__title">Choose an interval: </h2>
+                        <div class="radio__input"><input type="radio" id="10" name="int" class="js-whack-int" checked><label for="10" class="radio__label">10</label></div>
+                        <div class="radio__input"><input type="radio" id="20" name="int"  class="js-whack-int"><label for="20" class="radio__label">20</label></div>
+                        <div class="radio__input"><input type="radio" id="30" name="int" class="js-whack-int"><label for="30" class="radio__label">30</label></div>
+                    </form>
+                    <form htmlFor="speed" class="whack__main--radio">
+                        <h2 class="radio__title">Choose a speed: </h2>
+                        <div class="radio__input"><input type="radio" id="low" name="speed" class="radio__input js-whack-input" checked><label for="low" class="radio__label">Low</label></div>
+                        <div class="radio__input"><input type="radio" id="medium" name="speed"  class="radio__input js-whack-input"><label for="medium" class="radio__label">Medium</label></div>
+                        <div class="radio__input"><input type="radio" id="super" name="speed" class="radio__input js-whack-input"><label for="super" class="radio__label">Speedy</label></div>
+                    </form>
+                    <button id="js-whack-start" class="whack__main--btn">Start</button>
+                </section>
+                <aside class="whack__main--aside">
+                    <div class="aside__div">
+                        <img src="./images/tartalo-eat.png" alt="Tartalo open mouth">
+                        <img src="./images/tartalo-original.png" alt="Tartalo" class="aside__img--top">
+                    </div>
+                    <h2 class="aside__title">Tartalo</h2>
+                    <p class="aside__text">In Basque mythology, Tartalo is an enormously strong one-eyed giant very similar to the Greek Cyclops that Odysseus faced in Homer's Odyssey. He is said to live in caves in the mountains and catches young people to eat them; although he enjoys eating sheep too.</p>
+                    <a href="https://en.wikipedia.org/wiki/Tartalo" class="aside__link" target="_blank">Discover more</a>
+                </aside>
+        </main>    
+        
+    </div>
+    <script type="text/javascript" src="./main.js"></script>
+</body>
+
+</html>

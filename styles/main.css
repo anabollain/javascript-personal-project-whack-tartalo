@@ -1,0 +1,243 @@
+/*Reset*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Roboto, sans-serif;
+    color: black;
+}
+
+/*Header*/
+.page__header {
+    height: 10vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 30px;
+}
+
+.page__header--link {
+    text-decoration: none;
+}
+
+.page__header--title{
+    font-size: 24px;
+}
+
+.page__header--title:hover{
+    color: #ffdb53;
+}
+
+/*Main*/
+.whack__main{
+    height: 90vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.whack__main--game{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.js-whack-grid{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 390px;
+    height: 390px;
+    margin-bottom: 10px;
+}
+
+.square{
+    width: 130px;
+    height: 130px;
+    border: none;
+}
+
+/*Figure*/
+.mole{
+    cursor: pointer;
+    background-image: url('/images/tartalo-original.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.mole:hover{
+    cursor: pointer;
+    background-image: url('/images/tartalo-whack.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+/*Input radio*/
+.whack__main--radio{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.radio__title{
+    font-size: 14px;
+    margin-right: 10px;
+}
+
+.radio__input{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+}
+
+.radio__label{
+    cursor: pointer;
+}
+
+.radio__label:hover{
+    color: #ffdb53;
+}
+
+/*Result and restart button*/
+
+.whack__main--text{
+    font-size: 14px;
+}
+
+.whack__main--btn{
+    cursor: pointer;
+    text-decoration: none;
+    width: 100px;
+    height: 20px;
+    border-radius: 20px;
+    background-color: #ffdb53;
+    border: 1px solid #ffdb53;
+    color: white;
+    padding: 15px 10px 15px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+}
+
+.whack__main--btn:hover{
+    border: 1px solid #ffdb53;
+    background-color: transparent;
+    color: #ffdb53;
+}
+
+/*Aside*/
+
+.whack__main--aside{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.aside__div{
+    cursor: pointer;
+    width: 250px;
+    height: 250px;
+    position: relative;
+}
+
+.aside__div img{
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    transform: translate(-50%);
+    transition: opacity 1s ease-in-out;
+}
+
+.aside__img--top:hover{
+    opacity: 0;
+}
+
+.aside__title{
+    font-size: 18px;
+}
+
+.aside__text{
+    font-size: 12px;
+    width: 450px;
+}
+
+.aside__link{
+    cursor: pointer;
+    text-decoration: none;
+    width: 150px;
+    height: 20px;
+    border-radius: 20px;
+    background-color: transparent;
+    border: 1px solid #ffdb53;
+    color: #ffdb53;
+    padding: 15px 10px 15px 10px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+}
+
+.aside__link:hover{
+    border: 1px solid #ffdb53;
+    background-color: #ffdb53;
+    color: white;
+}
+
+
+/*Alert box*/
+
+.js-alert-box{
+    /*General properties*/
+    width: 350px;
+    height: 180px;
+    border-radius: 20px;
+    background-color: #ffdb53;
+    /*Font*/
+    font-size: 14px;
+    text-align: center;
+    /*Position*/
+    position: absolute;
+    top: 35%;
+    left: 14%;
+    /*Display*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+}
+
+
+.js-alert-btn{
+    /*Cursor*/
+    cursor: pointer;
+    /*General properties*/
+    width: 100px;
+    height: 25px;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    /*Font*/
+    color: #ffdb53;
+    font-size: 14px;
+}
+
+.js-alert-btn:hover{
+    transform: scale(110%);
+}
+
+.js-remove{
+    display: none;
+}
