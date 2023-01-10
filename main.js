@@ -86,13 +86,12 @@ function countDown() {
     currentTime--;
     //Adjust time
     adjustTime();
-    console.log(currentTime)
     //Update timer
     timeLeft.innerHTML = currentTime;
     if(currentTime === 0){
         clearInterval(countDownTimerId);
         clearInterval(timerId);
-        showAlert(result);
+        showAlert('', 'Game is over! Your final result is ' + result, handleAlertClick, 'Try again');
         squareEl.forEach(className => {
             className.classList.remove('mole');
         })
@@ -114,27 +113,42 @@ startEl.addEventListener('click', () => {
 })
 
 
-function showAlert(value) {
+function handleAlertClick() {
+    const alertBox = document.querySelector('.js-alert-box');
+    alertBox.classList.add('js-remove');
+    alertBox.classList.remove('js-alert-box');
+    result = 0;
+    scoreEl.innerHTML = result;
+    currentTime = selectedTime;
+    timeLeft.innerHTML = selectedTime;
+}
+
+function handleInstructionsClick() {
+    const alertBox = document.querySelector('.js-alert-box');
+    alertBox.classList.add('js-remove');
+    alertBox.classList.remove('js-alert-box');
+}
+
+showAlert('Game instructions', 'You must hit as many Tartalos as you can before the timer runs out. Select the time interval and speed for your play, and click the Start button. Enjoy the whacking!', handleInstructionsClick, 'Let\'s go')
+
+function showAlert(title, message, handleFunction, textBtn) {
     const alertBox = document.createElement('div');
     alertBox.setAttribute('class', 'js-alert-box');
+    const alertBoxTitle = document.createElement('h3');
+    const alertBoxTitleText = document.createTextNode(title);
+    alertBoxTitle.appendChild(alertBoxTitleText);
     const alertBoxText = document.createElement('p');
     alertBoxText.setAttribute('class', 'js-alert-text')
-    const alertBoxMsg = document.createTextNode('Game is over! Your final result is ' + value);
+    const alertBoxMsg = document.createTextNode(message);
     alertBoxText.appendChild(alertBoxMsg);
     const alertBtn = document.createElement('button');
     alertBtn.setAttribute('class', 'js-alert-btn');
-    const alertBtnMsg = document.createTextNode('Try again');
+    const alertBtnMsg = document.createTextNode(textBtn);
     alertBtn.appendChild(alertBtnMsg);
+    alertBox.appendChild(alertBoxTitle);
     alertBox.appendChild(alertBoxText);
     alertBox.appendChild(alertBtn);
     const body = document.querySelector('body');
     body.appendChild(alertBox);
-    alertBtn.addEventListener('click', ()=>{
-        alertBox.classList.add('js-remove');
-        alertBox.classList.remove('js-alert-box');
-        result = 0;
-        scoreEl.innerHTML = result;
-        currentTime = selectedTime;
-        timeLeft.innerHTML = selectedTime;
-    })
+    alertBtn.addEventListener('click', handleFunction);
 }

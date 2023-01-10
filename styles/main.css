@@ -168,7 +168,8 @@
 }
 
 .aside__text{
-    font-size: 12px;
+    font-size: 13px;
+    line-height: 18px;
     width: 450px;
 }
 
@@ -201,31 +202,35 @@
 .js-alert-box{
     /*General properties*/
     width: 350px;
-    height: 180px;
+    height: 230px;
     border-radius: 20px;
     background-color: #ffdb53;
+    padding: 30px;
     /*Font*/
     font-size: 14px;
     text-align: center;
     /*Position*/
     position: absolute;
-    top: 35%;
+    top: 28%;
     left: 14%;
     /*Display*/
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 25px;
+    gap: 20px;
 }
 
+.js-alert-text{
+    line-height: 20px;
+}
 
 .js-alert-btn{
     /*Cursor*/
     cursor: pointer;
     /*General properties*/
     width: 100px;
-    height: 25px;
+    height: 30px;
     background-color: white;
     border: none;
     border-radius: 5px;
